@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Titulo{
+  padding: 1.5rem;
+  background-color: rgba(63, 63, 63, 0.849);
+}
