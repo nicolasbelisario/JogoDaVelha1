@@ -7,7 +7,7 @@ export default function Topo(){
         <>
         <header>
             <h1 className='Titulo'>Jogo da velha tranquilo <LocalPizzaIcon fontSize='Large'/></h1>
-            <img src={clubpenguin} alt="Clu Penguin Dance" />
+            <img src={clubpenguin} alt="Club Penguin Dance" />
         </header>
         </>
     )
