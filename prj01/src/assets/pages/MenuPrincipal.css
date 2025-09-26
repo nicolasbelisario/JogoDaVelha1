@@ -1,0 +1,56 @@
+body{
+    background-color: #001133;
+}
+
+.menu-container {
+  height: 100%;
+  width: 100%;
+  background-color: #001f5a;
+  color: white;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; 
+  font-family: 'Arial', sans-serif;
+}
+
+.titulo-container {
+  text-align: center;
+  line-height: 1.1; 
+}
+
+.menu-titulo {
+  font-size: 4.5rem; 
+  font-weight: 900; 
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.menu-subtitulo {
+  font-size: 3rem; 
+  font-weight: 700;
+  margin: 0;
+  color: #cceeff; 
+}
+
+.menu-botao {
+  padding: 1rem 3rem; /* Espaçamento interno (vertical e horizontal) */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: #001133; /* Um azul ainda mais escuro para o botão */
+  border: 3px solid #3d84c4;
+  border-radius: 50px; /* Deixa o botão com as bordas totalmente arredondadas */
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Leve espaçamento entre as letras */
+  
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-botao:hover {
+  background-color: #002255; 
+  
+}

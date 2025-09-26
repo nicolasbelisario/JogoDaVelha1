@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 
@@ -69,6 +70,30 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 export default function Game() {
+  const { mapa, musica } = useOutletContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!mapa || !musica) {
+      navigate('/selecao-mapa');
+    }
+  }, [mapa, musica, navigate]);
+
+  useEffect(() => {
+    if (mapa) {
+      document.body.style.backgroundImage = `url(${mapa})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      return () => {
+        document.body.style.backgroundImage = '';
+        document.body.style.backgroundSize = '';
+        document.body.style.backgroundPosition = '';
+        document.body.style.backgroundRepeat = '';
+      };
+    }
+  }, [mapa]);
+
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
@@ -98,8 +123,17 @@ export default function Game() {
     );
   });
 
+  if (!mapa || !musica) {
+    return null;
+  }
+
   return (
     <div className="game">
+
+      <div className='musica-container' style={{ position: 'absolute', top: '10px', right: '10px' }}>
+         <audio controls autoPlay loop src={musica}></audio>
+      </div>
+
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>

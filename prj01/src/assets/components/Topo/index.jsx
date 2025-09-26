@@ -1,5 +1,5 @@
 import './style.css'
-import clubpenguin from '../../clubpenguin.gif'
+import clubpenguin from '../../images/clubpenguin.gif'
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 
 export default function Topo(){
