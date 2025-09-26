@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import Topo from '../components/Topo/index'
-import Jogo from '../components/Jogo/index'
+import Topo from '../components/Topo/index.jsx'
+import Jogo from '../components/Jogo/index.jsx'
 
 export default function JogoPag(){
     return(
